@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Consolas", "Monaco", "Courier New", monospace;
+    font-size: 20px;
+    background-color: rgba(12,16,20,255);
+    color: white;
+    user-select: none;
+    cursor: auto;
+}
+#code {
+    margin: auto;
+    border: 10px solid gray;
+    padding-block: 25px;
+    padding-inline: 50px;
+    width: 100%;
+    height: 100vh;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    white-space: pre-wrap;
+    overflow: hidden;
+    position: relative;
+    display: none; /* Ẩn mặc định, chỉ hiện khi landscape */
+}
+.string { color: #fbff00; }
+.keyword { color: #ff00aa; font-weight:bold; }
+.comments { color: #00ba3e; }
+
+/* Con trỏ */
+#cursor {
+    display: inline-block;
+    width: 10px;
+    height: 1em;
+    background: #ffffff;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+    vertical-align: bottom;
+}
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Nút Run */
+#runBtn {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    right: 100px;
+    background: #00ba3e;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+#runBtn:hover {
+    background: #009933;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Overlay */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: black;
+    color: white;
+    padding: 40px;
+    font-size: 24px;
+    text-align: start;
+    box-shadow: 0 0 20px rgba(0,255,0,0.7);
+    border: 10px solid gray;
+    width: 650px;
+    height: 450px;
+}
+
+/* Nút đóng (X) */
+#closeBtn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: rgb(255, 0, 0);
+    font-size: 24px;
+    cursor: pointer;
+}
+#closeBtn:hover {
+    color: red;
+}
+
+#time, #days{
+    font-weight: bold;
+}
+
+/* Thông báo khi xoay đứng */
+#rotateMsg {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    text-align: center;
+    color: rgb(21, 255, 0);
+    font-weight: bold;
+}
